@@ -7,6 +7,8 @@ import SeekPath from "./SeekPath";
 
 import Accordion from "./components/Accordion";
 
+import { DoiBadge } from "mc-react-library";
+
 function App() {
   const [openAccordion, setOpenAccordion] = useState(null);
   const [loaded, setLoaded] = useState(null);
@@ -39,7 +41,6 @@ function App() {
                 </h1>
               </div>
             </div>
-
             <div className="mx-auto max-w-4xl px-6 py-8 sm:px-10">
               <div className="space-y-3">
                 {/* First Accordion */}
@@ -164,11 +165,47 @@ function App() {
                 <CrystalUpload onStructureParsed={handleStructureParsed} />
               </div>
             </div>
-
             <SeekPath
               structure={loaded?.structure}
               className="max-w-6xl mx-auto py-4"
             />
+            <h2 className="px-4 text-lg">How to cite</h2>
+            <div className="px-8 text-md">
+              If you use this tool, please cite the following work:
+              <ul className="list-disc pl-10 space-y-2 pt-2 pb-8">
+                <li>
+                  Y. Hinuma, G. Pizzi, Y. Kumagai, F. Oba, I. Tanaka, Band
+                  structure diagram paths based on crystallography.{" "}
+                  <span className="inline-block align-middle">
+                    <DoiBadge
+                      doi="10.1016/j.commatsci.2016.10.015"
+                      label="Comp. Mat. Sci"
+                      color="#a2e5b7"
+                    />
+                  </span>{" "}
+                  and the "HPKOT" paper; arXiv version:{" "}
+                  <span className="inline-block align-middle">
+                    <DoiBadge
+                      doi="10.48550/arXiv.1602.06402"
+                      label="ArXiv"
+                      color="#a2e5b7"
+                    />
+                  </span>
+                </li>
+                <li>
+                  You should also cite Spglib that is an essential library used
+                  in the implementation: A. Togo, I. Tanaka, "Spglib: a software
+                  library for crystal symmetry search", arXiv:1808.01590 (2018){" "}
+                  <span className="inline-block align-middle">
+                    <DoiBadge
+                      doi="10.48550/arXiv.1808.01590"
+                      label="ArXiv"
+                      color="#a2e5b7"
+                    />
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </main>
