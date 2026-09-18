@@ -12,8 +12,8 @@
   "dependencies": {
     "@spglib/moyo-wasm": "0.17.0",
     "brillouinzone-visualizer": "0.4.4",
-    "matsci-parse": "0.14.2",
-    "mc-react-header": "^0.5.4",
+    "matsci-parse": "0.14.3",
+    "mc-react-header": "0.7.2",
     "mc-react-library": "^0.5.0",
     "mc-react-structure-visualizer": "^0.11.1",
     "react": "^18.2.0",

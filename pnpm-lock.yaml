@@ -15,11 +15,11 @@ importers:
         specifier: 0.4.4
         version: 0.4.4
       matsci-parse:
-        specifier: 0.14.2
-        version: 0.14.2
+        specifier: 0.14.3
+        version: 0.14.3
       mc-react-header:
-        specifier: ^0.5.4
-        version: 0.5.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 0.7.2
+        version: 0.7.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       mc-react-library:
         specifier: ^0.5.0
         version: 0.5.3(bootstrap-icons@1.13.1)(bootstrap@5.3.8(@popperjs/core@2.11.8))(react-bootstrap@2.10.10(@types/react@19.3.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -1491,8 +1491,8 @@ packages:
     engines: {node: '>= 18'}
     hasBin: true
 
-  matsci-parse@0.14.2:
-    resolution: {integrity: sha512-W73zLsizDw1i6NDxHgazcN/un2xgEkseD3HeyEQERxP3nukjP+5e/aZDARxSABGi53GkhBlXP0WxXKgPCElM9Q==}
+  matsci-parse@0.14.3:
+    resolution: {integrity: sha512-rlY00kuN9So0gLvNg50vBPzFS31BDY+2UsZpmFrgpxyMa1P9wCfyqCeHLzNoHFympCzetQLGpTVRYwRCadPi3A==}
 
   matsci-parse@0.8.4:
     resolution: {integrity: sha512-mQ2KF8XEfHPJWfJoF2I3O7QRUHZs/Q4Gzz9D5tahqeXVCauiiSh1VgCMi6SzXI1dyS7k2nyb0v2/0v7VPZZhWw==}
@@ -1500,8 +1500,8 @@ packages:
   mc-periodic-table@0.1.4:
     resolution: {integrity: sha512-eV7veuz6zJFuB+U14qmaKWDwmDNYqoqA4mr03LFjUdTyjrvtClhhE0RlQZXihZ+hzDxAmWWIbqxAosfXovMrxg==}
 
-  mc-react-header@0.5.4:
-    resolution: {integrity: sha512-sf8kF+XzYD5XmnMIkSG5cxyyv74pXBvK2W88MQ+qyYD2thqS9P+qU89uoZNr/JxJBKEcvN1ahIXdqsDuAOFnzg==}
+  mc-react-header@0.7.2:
+    resolution: {integrity: sha512-GgiGqu1g1BT/6p1+Mc4hi3ajQrIElbhPJs4xuIAeWDevtb5O8iu9elLcw333q55gbk7YOtzFmauFyJBqFepvlg==}
     peerDependencies:
       react: ^18.2.0
       react-dom: ^18.2.0
@@ -3479,7 +3479,7 @@ snapshots:
       tiny-emitter: 2.1.0
       typed-function: 4.2.2
 
-  matsci-parse@0.14.2:
+  matsci-parse@0.14.3:
     dependencies:
       '@spglib/moyo-wasm': 0.18.0
       fast-xml-parser: 5.11.1
@@ -3492,7 +3492,7 @@ snapshots:
 
   mc-periodic-table@0.1.4: {}
 
-  mc-react-header@0.5.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+  mc-react-header@0.7.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
     dependencies:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
