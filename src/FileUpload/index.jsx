@@ -4,6 +4,9 @@ import { fromJSON, toJSON } from "matsci-parse";
 import { parseFileText } from "./formats";
 import { examples } from "./examples";
 import Modal from "../components/Modal";
+import RemoteStructureLoader, {
+  shortHashForUrl,
+} from "../lib/RemoteStructureLoader.jsx";
 import {
   addHistoryEntry,
   clearHistory,
@@ -23,6 +26,47 @@ export default function CrystalStructureUpload({
   const [parsedFormat, setParsedFormat] = useState(null);
   const [history, setHistory] = useState(() => loadHistory());
   const [exampleLoading, setExampleLoading] = useState(null);
+  // When ?fromURL is already in history (matched by short hash before any
+  // fetch), load it from local storage instead of hitting the backend.
+  const [remoteAutoLoad, setRemoteAutoLoad] = useState(true);
+
+  useEffect(() => {
+    try {
+      const url = new URLSearchParams(window.location.search).get("fromURL");
+      const hash = url && shortHashForUrl(url);
+      const existing =
+        hash && loadHistory().find((entry) => entry.fileName === hash);
+      if (existing) {
+        setRemoteAutoLoad(false);
+        onStructureParsed?.({
+          format: existing.format,
+          structure: fromJSON(existing.structure),
+          fileName: existing.fileName,
+          id: existing.id,
+        });
+        setParsedFormat(existing.format);
+      }
+    } catch {
+      /* fall through to remote fetch */
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleRemoteLoaded = ({ structure, format, fileName }) => {
+    setError(null);
+    setParsedFormat(format);
+    onStructureParsed?.({ format, structure, fileName });
+    if (loadHistory().some((entry) => entry.fileName === fileName)) return;
+    setHistory(
+      addHistoryEntry({
+        id: crypto.randomUUID(),
+        fileName,
+        format,
+        date: new Date().toISOString(),
+        structure: toJSON(structure),
+      }),
+    );
+  };
 
   useEffect(() => {
     setHistory(loadHistory());
@@ -239,6 +283,12 @@ export default function CrystalStructureUpload({
           {error}
         </p>
       )}
+
+      <RemoteStructureLoader
+        autoLoad={remoteAutoLoad}
+        onLoaded={handleRemoteLoaded}
+        onError={(message) => setError(message)}
+      />
 
       <div className="mt-5 border-t border-slate-100 pt-4">
         <p className="mb-2 text-sm font-semibold text-slate-800">
