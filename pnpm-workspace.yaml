@@ -1,5 +1,5 @@
 allowBuilds:
   esbuild: true
 minimumReleaseAgeExclude:
-  - matsci-parse@0.15.1
-  - matsci-parse@0.16.1
+  - matsci-parse
+  - mc-react-library

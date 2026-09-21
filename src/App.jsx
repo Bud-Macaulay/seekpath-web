@@ -5,9 +5,7 @@ import { useState } from "react";
 import CrystalUpload from "./FileUpload";
 import SeekPath from "./SeekPath";
 
-import Accordion from "./components/Accordion";
-
-import { DoiBadge } from "mc-react-library";
+import { DoiBadge, McInfoAccordion } from "mc-react-library";
 
 function App() {
   const [openAccordion, setOpenAccordion] = useState(null);
@@ -44,7 +42,7 @@ function App() {
             <div className="mx-auto max-w-4xl px-6 py-8 sm:px-10">
               <div className="space-y-3">
                 {/* First Accordion */}
-                <Accordion
+                <McInfoAccordion
                   title="What SeeK-path does"
                   open={openAccordion === 0}
                   onToggle={() =>
@@ -98,10 +96,10 @@ function App() {
                       </div>
                     </p>
                   </div>
-                </Accordion>
+                </McInfoAccordion>
 
                 {/* Second accordion content */}
-                <Accordion
+                <McInfoAccordion
                   title="SeeK-path definitions and advantages"
                   open={openAccordion === 1}
                   onToggle={() =>
@@ -161,7 +159,7 @@ function App() {
                     </li>
                   </ul>
                   <p></p>
-                </Accordion>
+                </McInfoAccordion>
                 <CrystalUpload onStructureParsed={handleStructureParsed} />
               </div>
             </div>

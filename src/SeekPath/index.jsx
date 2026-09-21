@@ -5,7 +5,7 @@ import { getBrillouinZoneData, toCrystalD3, toKPOINTS } from "matsci-parse";
 
 import { formatSpaceGroupSymbol, preparePWText, prettify } from "../utils";
 
-import TextRenderer from "../components/TextRenderer";
+import { McCopyAccordion } from "mc-react-library";
 
 const DEFAULT_REFERENCE_DISTANCE = 0.025;
 const MIN_POINTS_PER_LINE = 2;
@@ -163,7 +163,7 @@ export default function SeekPath({ structure, className = "" }) {
             />
             <span className="w-12 text-right font-mono">{pointsPerLine}</span>
           </label>
-          <TextRenderer
+          <McCopyAccordion
             title="KPOINTS (VASP)"
             text={vaspKpointsText}
             filename="KPOINTS"
@@ -173,7 +173,7 @@ export default function SeekPath({ structure, className = "" }) {
             }
           />
 
-          <TextRenderer
+          <McCopyAccordion
             title="Quantum ESPRESSO pw.x input"
             text={pwInputText}
             filename="PW.in"
@@ -183,7 +183,7 @@ export default function SeekPath({ structure, className = "" }) {
             }
           />
 
-          <TextRenderer
+          <McCopyAccordion
             title="CRYSTAL D3 BAND"
             text={crystalD3Text}
             filename="BAND"
