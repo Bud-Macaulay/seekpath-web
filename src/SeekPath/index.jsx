@@ -19,7 +19,7 @@ export default function SeekPath({ structure, className = "" }) {
   const [withTimeReversal, setWithTimeReversal] = useState(true);
   const [referenceDistance] = useState(DEFAULT_REFERENCE_DISTANCE);
   const [pointsPerLine, setPointsPerLine] = useState(DEFAULT_POINTS_PER_LINE);
-  const [outputsOpen, setOutputsOpen] = useState("vasp");
+  const [outputsOpen, setOutputsOpen] = useState(null); // useState("vasp") // to open vasp on load
 
   const containerRef = useRef(null);
 

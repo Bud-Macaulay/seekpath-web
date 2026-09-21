@@ -51,11 +51,11 @@ export default function TextRenderer({
       }`}
     >
       {/* Header */}
-      <div className="flex items-center gap-4 bg-blue-50 px-5 py-4">
+      <div className="flex items-center gap-4 bg-blue-50 px-5 ">
         <button
           type="button"
           onClick={() => setOpen((value) => !value)}
-          className="flex min-w-0 flex-1 items-center gap-3 text-left font-medium text-slate-800"
+          className="flex py-4 min-w-0 flex-1 items-center gap-3 text-left font-medium text-slate-800"
           aria-expanded={open}
         >
           <span className="truncate">{title}</span>
