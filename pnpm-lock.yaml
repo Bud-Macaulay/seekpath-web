@@ -8,15 +8,12 @@ importers:
 
   .:
     dependencies:
-      '@spglib/moyo-wasm':
-        specifier: 0.17.0
-        version: 0.17.0
       brillouinzone-visualizer:
         specifier: 0.4.4
         version: 0.4.4
       matsci-parse:
-        specifier: 0.15.1
-        version: 0.15.1
+        specifier: 0.16.1
+        version: 0.16.1
       mc-react-header:
         specifier: 0.7.2
         version: 0.7.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -571,9 +568,6 @@ packages:
     resolution: {integrity: sha512-Erx822VRBwLa124shbj+wNXe//BOgMEctDV0m1aqTQdNO1S69DgNUCFKC1RCeZfixs1J31l6igk1ziyXErbigQ==}
     cpu: [x64]
     os: [win32]
-
-  '@spglib/moyo-wasm@0.17.0':
-    resolution: {integrity: sha512-4tb7iiH8qrT5oqRtj7OXLRSCoGykMEomu5dKbnEqbG3nI5w8QrFq4iTj8pY70XRSEUFgA5CZi73RtYrhiEMDaQ==}
 
   '@spglib/moyo-wasm@0.18.0':
     resolution: {integrity: sha512-xFilBO8piFZ/Z99nimN8oAljLo/2q1qGaUQV7T5ZvA+D2LGnz6W3Xj0ghD70/YpWYCtvg1DtymHLaQChk/F36Q==}
@@ -1491,8 +1485,8 @@ packages:
     engines: {node: '>= 18'}
     hasBin: true
 
-  matsci-parse@0.15.1:
-    resolution: {integrity: sha512-pHGuv+j1NiMnEC1/q5y5XUGJhtllKx1AQPl93j31W+YD7/guzSwL2rGkt4kawnMuhCLhFC+oMhSX8JLY1UfAxA==}
+  matsci-parse@0.16.1:
+    resolution: {integrity: sha512-ZsM1k3fKx9m5Na6LwEg2YDtz/dp4iWw1d2VywEihXYuSeVYjEnh0dvidYeqH64NPr3aIt+k27o+/tllMag0iqw==}
 
   matsci-parse@0.8.4:
     resolution: {integrity: sha512-mQ2KF8XEfHPJWfJoF2I3O7QRUHZs/Q4Gzz9D5tahqeXVCauiiSh1VgCMi6SzXI1dyS7k2nyb0v2/0v7VPZZhWw==}
@@ -2448,8 +2442,6 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.63.4':
     optional: true
-
-  '@spglib/moyo-wasm@0.17.0': {}
 
   '@spglib/moyo-wasm@0.18.0': {}
 
@@ -3479,7 +3471,7 @@ snapshots:
       tiny-emitter: 2.1.0
       typed-function: 4.2.2
 
-  matsci-parse@0.15.1:
+  matsci-parse@0.16.1:
     dependencies:
       '@spglib/moyo-wasm': 0.18.0
       fast-xml-parser: 5.11.1
