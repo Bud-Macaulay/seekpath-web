@@ -6,7 +6,7 @@ import InfoAccordions from "./AccordionContent";
 import CrystalUpload from "./FileUpload";
 import SeekPath from "./SeekPath";
 
-import { McShareButton, toStructureShare } from "mc-react-library";
+import { McAppHeader, McShareButton, toStructureShare } from "mc-react-library";
 
 // kv-store for share links. .env.development points `pnpm dev` at the dev
 // store; unset (production builds) means the Materials Cloud production store.
@@ -32,14 +32,13 @@ function App() {
 
       <main className="min-h-screen bg-[aliceblue] pb-10">
         <div className="mx-auto max-w-7xl px-4">
-          <div className="overflow-hidden bg-white shadow-sm pb-4">
-            <div className=" pt-4 sm:px-10">
-              <div className="mx-auto max-w-3xl text-center">
-                <h1 className="text-2xl tracking-tight text-slate-900 sm:text-3xl">
-                  SeeK-path: the k-path finder and visualizer
-                </h1>
-              </div>
-            </div>
+          <div className="overflow-hidden bg-white shadow-sm p-4">
+            <McAppHeader
+              title="SeeK-path: the k-path finder and visualizer"
+              logo={`${import.meta.env.BASE_URL}seekpath.png`}
+              logoAlt="SeeK-path logo"
+              dois={[{ doi: "10.1016/j.commatsci.2016.10.015", label: "Paper DOI" }]}
+            />
             <div className="mx-auto max-w-4xl px-6 py-8 sm:px-10">
               <div className="space-y-3">
                 <InfoAccordions />

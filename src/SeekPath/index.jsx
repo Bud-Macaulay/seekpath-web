@@ -250,7 +250,7 @@ export default function SeekPath({ structure, className = "" }) {
           </div>
 
           <div className="relative overflow-hidden">
-            <ViewerTitle>Structure (as loaded)</ViewerTitle>
+            <ViewerTitle>Structure (primitive)</ViewerTitle>
             {structure && (
               <div className="h-[480px] w-full">
                 <StructureVisualizer structure={structure} />
@@ -373,7 +373,7 @@ export default function SeekPath({ structure, className = "" }) {
         </>
       )}
 
-      {/* loading and error states herer */}
+      {/* loading and error states here */}
       {loading && (
         <div className="flex h-40 items-center justify-center text-sm text-slate-500">
           Computing high-symmetry k-path…
