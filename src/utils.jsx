@@ -1,11 +1,39 @@
 import { getElement, kpointsToPW } from "matsci-parse";
 
+const GREEK = {
+  GAMMA: "\u0393",
+  DELTA: "\u0394",
+  THETA: "\u0398",
+  LAMBDA: "\u039B",
+  XI: "\u039E",
+  PI: "\u03A0",
+  SIGMA: "\u03A3",
+  PHI: "\u03A6",
+  PSI: "\u03A8",
+  OMEGA: "\u03A9",
+};
+const SUBSCRIPT_DIGITS = "\u2080\u2081\u2082\u2083\u2084\u2085\u2086\u2087\u2088\u2089";
+
+// seekpath point label -> display label, e.g. GAMMA -> Γ, C_2 -> C₂,
+// SIGMA_0 -> Σ₀.
 export const prettify = (label) =>
   label
-    .replace(/GAMMA/g, "\u0393")
-    .replace(/SIGMA_0/g, "\u03A3")
-    .replace(/-/g, "\u2013")
-    .replace(/_/g, "\u2081");
+    .replace(/[A-Z]{2,}/g, (name) => GREEK[name] ?? name)
+    .replace(/_(\d+)/g, (_, digits) =>
+      [...digits].map((d) => SUBSCRIPT_DIGITS[d]).join(""),
+    );
+
+// Path segments -> one line, joining consecutive segments that share an end
+// point with "—" and breaks in the path with "|":
+//   [["GAMMA","C"],["C_2","Y_2"],["Y_2","GAMMA"]] -> "Γ—C|C₂—Y₂—Γ"
+export function formatPath(path) {
+  return path
+    .map(([from, to], i) => {
+      const joined = i > 0 && path[i - 1][1] === from;
+      return `${joined ? "" : (i > 0 ? "|" : "") + prettify(from)}\u2014${prettify(to)}`;
+    })
+    .join("");
+}
 
 export function formatSpaceGroupSymbol(symbol) {
   symbol = symbol.replace(/\s+/g, "");
